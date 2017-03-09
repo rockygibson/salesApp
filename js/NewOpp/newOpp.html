@@ -1,0 +1,51 @@
+<div>
+    <form ng-submit="addOpp()" class="createOpp">
+        <form class="formInput">
+            <h2>Create Opportunity</h2>
+            <input placeholder="Account Name" ng-model="newOpp.userid">
+            <br>
+            <input placeholder="Opp $ Value" ng-model="newOpp.contract">
+            <br>
+            <input placeholder="A, B, C or D" ng-model="newOpp.priority">
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </form>
+    <div class="oppContainer">
+        <md-content>
+            <md-list>
+                <md-item ng-repeat="item in oppsArray | orderBy: ['priority', '-interactionScore']">
+                    <md-item-content>
+                        <div class="md-tile-content">
+                            <div ng-hide="showInput">
+                                <h3>{{item.userid}}</h3>
+                                <h3>{{item.contract}}</h3>
+                                <h3>{{item.priority}}</h3>
+                            </div>
+                            <form ng-show="showInput" ng-submit="saveData(item); showInput = !showInput">
+                                <input type="text" ng-model="item.userid">
+                                <br>
+                                <input type="text" ng-model="item.contract">
+                                <br>
+                                <input type="text" ng-model="item.priority">
+                                <br>
+                                <button class="btn btn-primary btn-sm">save</button>
+                            </form>
+                            <!-- <button ng-show="showInput" class="btn btn-default" ng-click="showInput = !showInput">cancel</button> When I click cancel, it's saving whatever I inputted-->
+                            <button ng-hide="showInput" ng-click="showInput = !showInput" class="btn btn-primary btn-sm">edit</button>
+                            <br>
+                            <button ng-click="plus(item)" class="glyphicon glyphicon-plus btn-primary"></button>
+                            <span class="score">{{item.interactionScore}}</span>
+                            <button ng-click="minus(item)" class="glyphicon glyphicon-minus btn-primary"></button>
+                            <br>
+                            <button ng-click="removeOpp(item)" class="btn btn-primary btn-sm" class="deleteButton">dead</button>
+                            <br>
+                        </div>
+                    </md-item-content>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-item>
+            </md-list>
+        </md-content>
+    </div>
+</div>
+

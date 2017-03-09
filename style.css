@@ -1,0 +1,65 @@
+html, body{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.background{
+	background-color: #D6E8FF;
+}
+
+.header{
+	height: 39px;
+	width: 100%;
+	background-color: #013E8E;
+	font-size: 24pt;
+	font-family: Calibri;
+	font-weight: lighter;
+	color: #A0A7B1;
+	text-align: left;
+	position: absolute;
+	/*z-index: 1;*/
+	top: 0;
+}
+
+.createOpp{
+	height: 170px;
+	width: 90%;
+	text-align: center;
+	margin: 39px auto 0 auto;
+	background-color: #424242;
+	border-radius: 20px;
+	font-family: Calibri;
+}
+
+.formInput{
+	margin-top: 39px;
+	padding-bottom: 20px;
+}
+
+.oppContainer{
+	width: 90%;
+	background-color: #A0A7B1;
+	margin: auto;
+	text-align: center;
+	/*z-index: -1;*/
+	border-radius: 20px;
+}
+
+.button{
+	margin: 2px 2px;
+}
+
+.score{
+	font-size: 14pt;
+}
+
+h2 {
+	margin: 0;
+	padding-top: 8px;
+	padding-bottom: 5px;
+	font-size: 24pt;
+	color: #A0A7B1;
+	font-family: Calibri;
+	font-weight: lighter;
+}
